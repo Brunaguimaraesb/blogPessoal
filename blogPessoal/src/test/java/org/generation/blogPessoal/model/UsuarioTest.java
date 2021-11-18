@@ -1,5 +1,6 @@
 package org.generation.blogPessoal.model;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
@@ -53,7 +54,7 @@ public class UsuarioTest {
 		Set<ConstraintViolation<Usuario>> violacao = validator.validate(usuarioNulo);
 		System.out.println(violacao.toString());
 		
-		assertTrue(violacao.isEmpty());
+		assertFalse(violacao.isEmpty());
 	}
 		
 }
