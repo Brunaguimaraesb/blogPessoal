@@ -58,8 +58,8 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/cadastrar")
-	public ResponseEntity<Optional<Usuario>> Post(@Valid @RequestBody Usuario usuario){
+	public ResponseEntity<Usuario> Post(@Valid @RequestBody Usuario usuario){
 		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(usuarioService.cadastrarUsuario(usuario));
+				.body(usuarioService.cadastrarUsuario(usuario).get());
 	}
 }
