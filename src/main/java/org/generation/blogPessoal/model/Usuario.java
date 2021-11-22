@@ -62,6 +62,7 @@ public class Usuario {
 		this.usuario = usuario;
 		this.senha = senha;
 		this.dataNascimento = dataNascimento;
+		
 	}
 	
 	//Segundo método Construtor - Sem os atributos
