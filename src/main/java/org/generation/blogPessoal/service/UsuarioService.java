@@ -58,7 +58,7 @@ public class UsuarioService {
 			}
 				
 		}
-		throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Usuário ou senha inválidos", null)
+		throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Usuário ou senha inválidos", null);
 	}		
 		
 	private String criptografarSenha(String senha) {
