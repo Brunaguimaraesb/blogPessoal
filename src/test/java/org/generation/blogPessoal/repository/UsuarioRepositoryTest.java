@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Optional;
 
 import org.generation.blogPessoal.model.Usuario;
 import org.junit.jupiter.api.AfterAll;
@@ -45,10 +46,10 @@ public class UsuarioRepositoryTest {
 
 	@Test
 	@DisplayName("💾 Retorna o nome")
-	public void findByNomeRetornaNome() {
+	public void deveNomeRetornaNome() {
 
-		Usuario usuario = usuarioRepository.findByNome("João da Silva");
-		assertTrue(usuario.getNome().equals("João da Silva"));
+		Optional <Usuario> usuario = usuarioRepository.findByNome("João da Silva");
+		assertTrue(usuario.get().getNome().equals("João da Silva"));
 	}
 
 	@Test
