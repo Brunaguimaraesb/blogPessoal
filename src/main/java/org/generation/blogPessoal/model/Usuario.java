@@ -51,18 +51,22 @@ public class Usuario {
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataNascimento;
 	
+	private String tipo;
+	
 	@OneToMany (mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 		private List <PostagemModel> postagem;
 	
 	//Primeiro método Construtor - Com os atributos
-	public Usuario(long id,String nome, String usuario, String senha, LocalDate dataNascimento) {
+	public Usuario(long id,String nome, String usuario, String senha, String foto, LocalDate dataNascimento, String tipo) {
 		this.id = id;
 		this.nome = nome;
 		this.usuario = usuario;
 		this.senha = senha;
+		this.foto = foto;
 		this.dataNascimento = dataNascimento;
-		
+		this.tipo = tipo;
+			
 	}
 	
 	//Segundo método Construtor - Sem os atributos
@@ -118,6 +122,14 @@ public class Usuario {
 		this.dataNascimento = dataNascimento;
 	}
 	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
 	public List<PostagemModel> getPostagem() {
 		return this.postagem;
 	}
@@ -125,5 +137,6 @@ public class Usuario {
 	public void setPostagem(List<PostagemModel> postagem) {
 		this.postagem = postagem;
 	}
-	
+
+		
 }
